@@ -1,5 +1,6 @@
 # JaneStreetPuzzles
 
+Solved puzzles  
 
 January 2020: www.janestreet.com/puzzles/alter-nate/  
 April 2019: www.janestreet.com/puzzles/remote-sudoku/  
