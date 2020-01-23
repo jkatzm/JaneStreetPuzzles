@@ -105,11 +105,9 @@ def set_all(board, constraint_board):
 	return
 
 
-
-
-
-
-
+################################################################
+################################################################
+################################################################
 
 
 board = np.array([[0]*9]*9)
@@ -129,39 +127,9 @@ constraint_board = np.array([
 print("\nboard:\n", board, '\n')
 print("constraint board:\n", constraint_board, '\n')
 
-
-
 set_all(board, constraint_board)
 
 print("\nsolved board:\n", board, '\n')
-
-
-
-
-
-
-# def brute_force_solve(board):
-# 	n = board.shape[0]
-
-# 	if len(board[board == 0]) == 0:
-# 		print("solved")
-# 		return True
-
-# 	for i in range(n):
-# 		for j in range(n):
-
-# 			if board[i][j] == 0:
-
-# 				for new_val in get_possible_values(board, i, j):
-
-# 					board[i][j] = new_val
-
-# 					if brute_force_solve(board) == True:
-# 						return True
-
-# 					board[i][j] = 0
-
-# 	return False
 
 
 
