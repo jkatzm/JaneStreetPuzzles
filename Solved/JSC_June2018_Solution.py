@@ -1,13 +1,15 @@
 import numpy as np
 from scipy.ndimage.measurements import label
 
+################################################################
+# Utility Functions
+################################################################
 
 def get_row(grid, i):
 	return grid[i,:]
 
 def get_column(grid, j):
 	return grid[:,j]
-
 
 
 def partitions(n, k, l=1):
@@ -44,9 +46,9 @@ def legal_col_partitions(grid, j):
 	k = 4 - np.count_nonzero(col)
 	return [p for p in partitions(n, k) if not illegal_partition(grid, p)]
 
-
-
-
+################################################################
+# Secondary Driver Programs
+################################################################
 
 def forceable_rows(grid):
 	indices = {}
@@ -108,8 +110,9 @@ def force_cols(grid, index_value_map):
 					solve_puzzle(grid)
 				grid[i][j] = 0
 
-
-
+################################################################
+# Constraint Checking
+################################################################
 
 def valid_placement(grid, i, j):
 	if (grid[i][j] > 7) | (grid[i][j] < 1):
@@ -166,7 +169,9 @@ def valid_connectivity(final_grid):
 	labeled_array, num_features = label(final_grid != 0)
 	return num_features == 1
 
-
+################################################################
+# Primary Driver Program
+################################################################
 
 def solve_puzzle(grid):
 	fr = forceable_rows(grid)
@@ -186,7 +191,9 @@ def solve_puzzle(grid):
 				exit()
 	return
 
-
+################################################################
+################################################################
+################################################################
 
 JaneStreetGrid = np.array([
 	[0,4,0,0,0,0,0],
@@ -200,10 +207,7 @@ JaneStreetGrid = np.array([
 
 print(JaneStreetGrid, '\n')
 
-
 solve_puzzle(JaneStreetGrid)
-
-
 
 
 
