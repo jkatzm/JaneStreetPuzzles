@@ -1,5 +1,9 @@
 import numpy as np
 
+################################################################
+# Utility Functions
+################################################################
+
 def get_row(board, i):
 	return board[i,:]
 
@@ -45,6 +49,10 @@ def get_possible_indices(board, i, j, n):
 	
 	return possible_indices
 
+################################################################
+# Secondary Driver Programs
+################################################################
+
 def set_missing_values(board):
 
 	while len(board[board == 0]) > 0:
@@ -83,6 +91,10 @@ def set_constraint_values(board, constraint_board):
 		if changed == False:
 			return
 
+################################################################
+# Primary Driver Program
+################################################################
+
 def set_all(board, constraint_board):
 	print("solving...")
 	
@@ -104,11 +116,9 @@ def set_all(board, constraint_board):
 
 	return
 
-
 ################################################################
 ################################################################
 ################################################################
-
 
 board = np.array([[0]*9]*9)
 
